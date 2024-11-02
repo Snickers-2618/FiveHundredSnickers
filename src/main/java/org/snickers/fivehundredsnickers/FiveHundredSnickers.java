@@ -15,9 +15,7 @@ import org.slf4j.Logger;
 
 @Mod(FiveHundredSnickers.MOD_ID)
 public class FiveHundredSnickers {
-    // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "fivehundredsnickers";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public FiveHundredSnickers(FMLJavaModLoadingContext context) {
