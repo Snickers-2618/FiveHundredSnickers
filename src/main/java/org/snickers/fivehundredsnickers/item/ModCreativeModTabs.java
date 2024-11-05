@@ -21,6 +21,7 @@ public class ModCreativeModTabs {
                 pOutput.accept(ModBlocks.PACKED_STONE.get());
                 pOutput.accept(ModItems.CIGARETTE.get());
                 pOutput.accept(ModItems.BBC.get());
+                pOutput.accept(ModItems.REPAIR_TALISMAN.get());
             })
             .build());
 
