@@ -27,14 +27,10 @@ public class RepairTalisman extends Item {
     @Override
     public void inventoryTick(@NotNull ItemStack stack, Level level, @NotNull Entity entity, int invSlot, boolean isSelected) {
         if (!level.isClientSide && entity instanceof Player player) {
-
-            player.getCapability(InternalTimers.CAPABILITY).ifPresent(timers -> { //This does not happen. Sad. Capability isn't presented here?
-                FiveHundredSnickers.LOGGER.info("Ping!");
-                timers.activateRepair();
-                if (timers.canRepair()) {
-                    repairAllItems(player);
-                }
-            });
+            InternalTimers.activateRepair();
+            if (InternalTimers.canRepair()) {
+                repairAllItems(player);
+            }
         }
     }
 
@@ -55,9 +51,9 @@ public class RepairTalisman extends Item {
             ItemStack invStack = inv.getStackInSlot(i);
             if (canRepairStack.test(invStack)) {
                 invStack.setDamageValue(invStack.getDamageValue() - 1);
-                FiveHundredSnickers.LOGGER.info("It repaired something!");
                 if (!hasAction) {
                     hasAction = true;
+                    FiveHundredSnickers.LOGGER.info("It repaired something!");
                 }
             }
         }

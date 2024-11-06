@@ -8,24 +8,26 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.snickers.fivehundredsnickers.FiveHundredSnickers;
 import org.snickers.fivehundredsnickers.SnickersConfig;
+import org.w3c.dom.html.HTMLImageElement;
 
 @Mod.EventBusSubscriber
 public class InternalTimers {
     public static final Capability<InternalTimers> CAPABILITY = CapabilityManager.get(new CapabilityToken<>(){});
-    private final Timer repair = new Timer();
+    static private final Timer repair = new Timer();
 
-    public void activateRepair() {
+    public static void activateRepair() {
         repair.shouldUpdate = SnickersConfig.REPAIR_RATE != -1;
     }
 
-    public boolean canRepair() {
+    public static boolean canRepair() {
+        FiveHundredSnickers.LOGGER.info(String.valueOf(repair.tickCount));
         if (repair.tickCount == 0) {
-            FiveHundredSnickers.LOGGER.info("It can repair");
             repair.tickCount = SnickersConfig.REPAIR_RATE;
             repair.shouldUpdate = false;
             FiveHundredSnickers.LOGGER.info("It can repair");
             return true;
         }
+        repair.tick();
         return false;
     }
 
