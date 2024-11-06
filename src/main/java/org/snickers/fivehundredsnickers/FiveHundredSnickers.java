@@ -20,11 +20,12 @@ import org.snickers.fivehundredsnickers.item.ModItems;
 @Mod(FiveHundredSnickers.MOD_ID)
 public class FiveHundredSnickers {
     public static final String MOD_ID = "fivehundredsnickers";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public FiveHundredSnickers(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
+        FiveHundredSnickers.LOGGER.info("My nigga starts!");
         ModCreativeModTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
 
