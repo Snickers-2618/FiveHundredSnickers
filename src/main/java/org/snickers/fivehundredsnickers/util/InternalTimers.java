@@ -20,11 +20,9 @@ public class InternalTimers {
     }
 
     public static boolean canRepair() {
-        FiveHundredSnickers.LOGGER.info(String.valueOf(repair.tickCount));
         if (repair.tickCount == 0) {
             repair.tickCount = SnickersConfig.REPAIR_RATE;
             repair.shouldUpdate = false;
-            FiveHundredSnickers.LOGGER.info("It can repair");
             return true;
         }
         repair.tick();

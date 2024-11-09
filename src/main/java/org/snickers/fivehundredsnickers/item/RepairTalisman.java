@@ -35,25 +35,18 @@ public class RepairTalisman extends Item {
     }
 
     private static void repairAllItems(Player player) {
-        FiveHundredSnickers.LOGGER.info("repairAllItems");
         Predicate<ItemStack> canRepairPlayerItem = CAN_REPAIR_ITEM.and(stack -> stack != player.getMainHandItem() || !player.swinging);
         player.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(inv -> repairAllItems(inv, canRepairPlayerItem));
-//        IItemHandler curios = PlayerHelper.getCurios(player);
-//        if (curios != null) {
-//            repairAllItems(curios, canRepairPlayerItem);
-//        }
     }
 
     private static boolean repairAllItems(IItemHandler inv, Predicate<ItemStack> canRepairStack) {
         boolean hasAction = false;
-        FiveHundredSnickers.LOGGER.info("repairAllItems (real)");
         for (int i = 0; i < inv.getSlots(); i++) {
             ItemStack invStack = inv.getStackInSlot(i);
             if (canRepairStack.test(invStack)) {
                 invStack.setDamageValue(invStack.getDamageValue() - 1);
                 if (!hasAction) {
                     hasAction = true;
-                    FiveHundredSnickers.LOGGER.info("It repaired something!");
                 }
             }
         }

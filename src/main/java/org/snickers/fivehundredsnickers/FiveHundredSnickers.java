@@ -22,6 +22,10 @@ public class FiveHundredSnickers {
     public static final String MOD_ID = "fivehundredsnickers";
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    public FiveHundredSnickers() {
+        LOGGER.error("FiveHundredSnickers failed to load. Please update your FORGE");
+    }
+
     public FiveHundredSnickers(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
