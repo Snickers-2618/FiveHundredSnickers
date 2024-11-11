@@ -19,9 +19,14 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, FiveHundredSnickers.MOD_ID);
 
     public static final RegistryObject<Block> LAVAWOOD = registerBlock("lavawood", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS)
-            .sound(SoundType.STONE)
-            .explosionResistance(10)));
-    public static final RegistryObject<Block> PACKED_STONE = registerBlock("packed_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+            .sound(SoundType.WOOD)
+            .strength(2F, 3F)
+            .requiresCorrectToolForDrops()));
+//    public static final RegistryObject<Block> PACKED_STONE = registerBlock("packed_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+    public static final RegistryObject<Block> RED_PHOSPHOR_LANTERN = registerBlock("red_phosphor_lantern", () -> new Block(BlockBehaviour.Properties.copy(Blocks.LANTERN)
+            .strength(3.5F)));
+
+
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

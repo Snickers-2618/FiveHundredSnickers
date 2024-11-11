@@ -18,7 +18,8 @@ public class ModCreativeModTabs {
             .title(Component.translatable("creativetab.fivehundredsnickers"))
             .displayItems((pParameters, pOutput) -> {
                 pOutput.accept(ModBlocks.LAVAWOOD.get());
-                pOutput.accept(ModBlocks.PACKED_STONE.get());
+//                pOutput.accept(ModBlocks.PACKED_STONE.get());
+                pOutput.accept(ModBlocks.RED_PHOSPHOR_LANTERN.get());
                 pOutput.accept(ModItems.CIGARETTE.get());
                 pOutput.accept(ModItems.BBC.get());
                 pOutput.accept(ModItems.REPAIR_TALISMAN.get());

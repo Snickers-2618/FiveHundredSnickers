@@ -17,8 +17,8 @@ public class ModItems {
             .nutrition(1)
             .build())).stacksTo(16)));
     public static final RegistryObject<Item> BBC = ITEMS.register("bbc", () -> new Item(new Item.Properties().food((new FoodProperties.Builder()
-            .saturationMod(3F)
-            .nutrition(10)
+            .saturationMod(1.5F)
+            .nutrition(5)
             .build())).stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
