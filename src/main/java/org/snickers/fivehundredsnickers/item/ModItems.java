@@ -20,6 +20,7 @@ public class ModItems {
             .saturationMod(1.5F)
             .nutrition(5)
             .build())).stacksTo(1)));
+    public static final RegistryObject<RepairTalisman> STOGIE = ITEMS.register("stogie", () -> new RepairTalisman(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

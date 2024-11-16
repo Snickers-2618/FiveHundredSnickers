@@ -2,6 +2,21 @@
   "variants": {
     "": {
       "model": "fivehundredsnickers:block/red_phosphor_lantern"
+    },
+    "facing=east": {
+      "model": "fivehundredsnickers:block/red_phosphor_lantern",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "fivehundredsnickers:block/red_phosphor_lantern",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "fivehundredsnickers:block/red_phosphor_lantern"
+    },
+    "facing=west": {
+      "model": "fivehundredsnickers:block/red_phosphor_lantern",
+      "y": 90
     }
   }
 }

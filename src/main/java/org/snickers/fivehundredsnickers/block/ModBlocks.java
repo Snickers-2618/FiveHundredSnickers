@@ -1,5 +1,6 @@
 package org.snickers.fivehundredsnickers.block;
 
+import net.minecraft.resources.RegistryDataLoader;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -12,6 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.snickers.fivehundredsnickers.FiveHundredSnickers;
 import org.snickers.fivehundredsnickers.item.ModItems;
+import org.snickers.fivehundredsnickers.item.RepairTalisman;
 
 import java.util.function.Supplier;
 
@@ -25,8 +27,6 @@ public class ModBlocks {
 //    public static final RegistryObject<Block> PACKED_STONE = registerBlock("packed_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
     public static final RegistryObject<Block> RED_PHOSPHOR_LANTERN = registerBlock("red_phosphor_lantern", () -> new Block(BlockBehaviour.Properties.copy(Blocks.LANTERN)
             .strength(3.5F)));
-
-
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
