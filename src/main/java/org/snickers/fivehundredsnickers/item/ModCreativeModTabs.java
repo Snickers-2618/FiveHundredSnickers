@@ -22,7 +22,7 @@ public class ModCreativeModTabs {
                 pOutput.accept(ModBlocks.RED_PHOSPHOR_LANTERN.get());
                 pOutput.accept(ModItems.CIGARETTE.get());
                 pOutput.accept(ModItems.BBC.get());
-                pOutput.accept(ModItems.REPAIR_TALISMAN.get());
+//                pOutput.accept(ModItems.REPAIR_TALISMAN.get());
                 pOutput.accept(ModItems.STOGIE.get());
             })
             .build());
