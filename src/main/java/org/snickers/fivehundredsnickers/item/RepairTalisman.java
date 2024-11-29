@@ -29,7 +29,6 @@ public class RepairTalisman extends Item {
     @Override
     public void inventoryTick(@NotNull ItemStack stack, Level level, @NotNull Entity entity, int invSlot, boolean isSelected) {
         if (!level.isClientSide && entity instanceof Player player) {
-            FiveHundredSnickers.LOGGER.info(String.valueOf(entity.getId()));
             InternalTimers.activateRepair();
             if (InternalTimers.canRepair()) {
                 repairAllItems(player);
@@ -39,7 +38,8 @@ public class RepairTalisman extends Item {
 
     private static void repairAllItems(Player player) {
         Predicate<ItemStack> canRepairPlayerItem = CAN_REPAIR_ITEM.and(stack -> stack != player.getMainHandItem() || !player.swinging);
-        player.getCapability(ModCapabilities.PLAYER_TIMER).ifPresent(iTimerCapability -> {FiveHundredSnickers.LOGGER.info(String.valueOf(iTimerCapability.getTimer().getTick()));});
+        FiveHundredSnickers.LOGGER.info(String.valueOf(player.getCapability(ModCapabilities.PLAYER_TIMER).isPresent()));
+        player.getCapability(ModCapabilities.PLAYER_TIMER).ifPresent(iTimerCapability -> {FiveHundredSnickers.LOGGER.info(String.valueOf(iTimerCapability.getTimer().getTick()) + "   HELLO from iTimerCapability!");});
         player.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(inv -> repairAllItems(inv, canRepairPlayerItem));
     }
 

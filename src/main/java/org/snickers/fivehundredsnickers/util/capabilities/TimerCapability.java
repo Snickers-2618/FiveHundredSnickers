@@ -6,8 +6,9 @@ public class TimerCapability implements ITimerCapability {
     private InternalTimer timer;
 
     @Override
-    public void setTimer(InternalTimer t) {
+    public TimerCapability setTimer(InternalTimer t) {
         this.timer = t;
+        return null;
     }
 
     @Override

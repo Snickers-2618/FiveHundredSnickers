@@ -5,6 +5,6 @@ import org.snickers.fivehundredsnickers.util.InternalTimer;
 
 @AutoRegisterCapability
 public interface ITimerCapability {
-    void setTimer(InternalTimer t);
+    TimerCapability setTimer(InternalTimer t);
     InternalTimer getTimer();
 }
