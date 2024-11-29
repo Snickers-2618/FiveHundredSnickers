@@ -5,7 +5,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.StructureManager;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.IItemHandler;
@@ -39,7 +38,6 @@ public class RepairTalisman extends Item {
     private static void repairAllItems(Player player) {
         Predicate<ItemStack> canRepairPlayerItem = CAN_REPAIR_ITEM.and(stack -> stack != player.getMainHandItem() || !player.swinging);
         FiveHundredSnickers.LOGGER.info(String.valueOf(player.getCapability(ModCapabilities.PLAYER_TIMER).isPresent()));
-        player.getCapability(ModCapabilities.PLAYER_TIMER).ifPresent(iTimerCapability -> {FiveHundredSnickers.LOGGER.info(String.valueOf(iTimerCapability.getTimer().getTick()) + "   HELLO from iTimerCapability!");});
         player.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(inv -> repairAllItems(inv, canRepairPlayerItem));
     }
 
