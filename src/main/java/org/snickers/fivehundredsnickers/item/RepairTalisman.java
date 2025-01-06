@@ -9,6 +9,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
+import org.snickers.fivehundredsnickers.util.InternalTimers;
 
 import java.util.function.Predicate;
 
@@ -25,13 +26,11 @@ public class RepairTalisman extends Item {
     @Override
     public void inventoryTick(@NotNull ItemStack stack, Level level, @NotNull Entity entity, int invSlot, boolean isSelected) {
         if (!level.isClientSide && entity instanceof Player player) {
+            InternalTimers.activateRepair();
+            if (InternalTimers.canRepair() && ItemHelper.isFirstItem(player, stack)) {
+                repairAllItems(player);
+            }
 
-            //ЭТА ХУЙНЯ ДУМАЕТ ЧТО КАПАБИЛИТИ НЕТ, НО ОНО ЕСТЬ
-
-//            InternalTimers.activateRepair();
-//            if (InternalTimers.canRepair()) {
-//                repairAllItems(player);
-//            }
         }
     }
 

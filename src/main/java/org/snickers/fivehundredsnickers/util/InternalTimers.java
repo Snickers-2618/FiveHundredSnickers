@@ -1,18 +1,10 @@
 package org.snickers.fivehundredsnickers.util;
 
-import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.CapabilityManager;
-import net.minecraftforge.common.capabilities.CapabilityToken;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import org.snickers.fivehundredsnickers.FiveHundredSnickers;
 import org.snickers.fivehundredsnickers.SnickersConfig;
-import org.w3c.dom.html.HTMLImageElement;
 
 @Mod.EventBusSubscriber
 public class InternalTimers {
-    public static final Capability<InternalTimers> CAPABILITY = CapabilityManager.get(new CapabilityToken<>(){});
     static private final Timer repair = new Timer();
 
     public static void activateRepair() {
@@ -22,7 +14,7 @@ public class InternalTimers {
     public static boolean canRepair() {
         if (repair.tickCount == 0) {
             repair.tickCount = SnickersConfig.REPAIR_RATE;
-            repair.shouldUpdate = false;
+//            repair.shouldUpdate = false;
             return true;
         }
         repair.tick();

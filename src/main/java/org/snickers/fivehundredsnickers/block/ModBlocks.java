@@ -1,6 +1,5 @@
 package org.snickers.fivehundredsnickers.block;
 
-import net.minecraft.resources.RegistryDataLoader;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -13,7 +12,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.snickers.fivehundredsnickers.FiveHundredSnickers;
 import org.snickers.fivehundredsnickers.item.ModItems;
-import org.snickers.fivehundredsnickers.item.RepairTalisman;
 
 import java.util.function.Supplier;
 
