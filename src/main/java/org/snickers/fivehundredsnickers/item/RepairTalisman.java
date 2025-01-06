@@ -9,9 +9,6 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
-import org.snickers.fivehundredsnickers.FiveHundredSnickers;
-import org.snickers.fivehundredsnickers.util.InternalTimers;
-import org.snickers.fivehundredsnickers.util.capabilities.ModCapabilities;
 
 import java.util.function.Predicate;
 
@@ -28,20 +25,22 @@ public class RepairTalisman extends Item {
     @Override
     public void inventoryTick(@NotNull ItemStack stack, Level level, @NotNull Entity entity, int invSlot, boolean isSelected) {
         if (!level.isClientSide && entity instanceof Player player) {
-            InternalTimers.activateRepair();
-            if (InternalTimers.canRepair()) {
-                repairAllItems(player);
-            }
+
+            //ЭТА ХУЙНЯ ДУМАЕТ ЧТО КАПАБИЛИТИ НЕТ, НО ОНО ЕСТЬ
+
+//            InternalTimers.activateRepair();
+//            if (InternalTimers.canRepair()) {
+//                repairAllItems(player);
+//            }
         }
     }
 
-    private static void repairAllItems(Player player) {
+    private void repairAllItems(Player player) {
         Predicate<ItemStack> canRepairPlayerItem = CAN_REPAIR_ITEM.and(stack -> stack != player.getMainHandItem() || !player.swinging);
-        FiveHundredSnickers.LOGGER.info(String.valueOf(player.getCapability(ModCapabilities.PLAYER_TIMER).isPresent()));
         player.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(inv -> repairAllItems(inv, canRepairPlayerItem));
     }
 
-    private static boolean repairAllItems(IItemHandler inv, Predicate<ItemStack> canRepairStack) {
+    private boolean repairAllItems(IItemHandler inv, Predicate<ItemStack> canRepairStack) {
         boolean hasAction = false;
         for (int i = 0; i < inv.getSlots(); i++) {
             ItemStack invStack = inv.getStackInSlot(i);

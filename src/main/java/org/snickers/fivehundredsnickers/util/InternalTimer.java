@@ -9,9 +9,11 @@ public class InternalTimer {
     public static final Capability<InternalTimer> CAPABILITY = CapabilityManager.get(new CapabilityToken<>(){});
     private final InternalTimer.Timer repair = new InternalTimer.Timer();
 
+
     public int getTick() {
         return repair.tickCount;
     }
+
     public void activateRepair() {
         repair.shouldUpdate = SnickersConfig.REPAIR_RATE != -1;
     }
@@ -41,6 +43,4 @@ public class InternalTimer {
             }
         }
     }
-
-
 }
