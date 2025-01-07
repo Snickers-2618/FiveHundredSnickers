@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "NWN",
+    "GPG",
+    "NNN"
+  ],
+  "key": {
+    "P": {
+      "item": "fivehundredsnickers:red_phosphor"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "N": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "fivehundredsnickers:red_phosphor_lantern",
+    "count": 1
+  }
+}

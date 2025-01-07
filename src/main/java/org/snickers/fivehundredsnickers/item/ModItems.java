@@ -8,6 +8,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.snickers.fivehundredsnickers.FiveHundredSnickers;
 
+import java.beans.FeatureDescriptor;
+
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, FiveHundredSnickers.MOD_ID);
 
@@ -20,6 +22,9 @@ public class ModItems {
             .nutrition(5)
             .build())).stacksTo(1)));
     public static final RegistryObject<RepairTalisman> STOGIE = ITEMS.register("stogie", () -> new Stogie(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> RED_PHOSPHOR = ITEMS.register("red_phosphor", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLUE_PHOSPHOR_BOTTLE = ITEMS.register("blue_phosphor_bottle", () -> new Item(new Item.Properties()));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
