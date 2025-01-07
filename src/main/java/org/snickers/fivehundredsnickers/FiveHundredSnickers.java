@@ -15,6 +15,8 @@ import org.slf4j.Logger;
 import org.snickers.fivehundredsnickers.block.ModBlocks;
 import org.snickers.fivehundredsnickers.item.ModCreativeModTabs;
 import org.snickers.fivehundredsnickers.item.ModItems;
+import org.snickers.fivehundredsnickers.util.curios.CurioRenderer;
+import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 @Mod(FiveHundredSnickers.MOD_ID)
 public class FiveHundredSnickers {
@@ -31,12 +33,12 @@ public class FiveHundredSnickers {
         FiveHundredSnickers.LOGGER.info("My nigga starts!");
         ModCreativeModTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
-
-
         ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(ClientModEvents::onClientSetup);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -57,6 +59,7 @@ public class FiveHundredSnickers {
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            CuriosRendererRegistry.register(ModItems.STOGIE.get(), CurioRenderer::new);
         }
     }
 

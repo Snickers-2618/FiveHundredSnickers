@@ -2,8 +2,11 @@
   "item.fivehundredsnickers.cigarette": "Cigarette",
   "item.fivehundredsnickers.bbc": "Big black cock",
   "item.fivehundredsnickers.repair_talisman": "Repair talisman",
+  "item.fivehundredsnickers.stogie": "Stogie",
   "creativetab.fivehundredsnickers": "FiveHundredSnickers",
   "block.fivehundredsnickers.lavawood": "Lava planks",
   "block.fivehundredsnickers.packed_stone": "Packed cobblestone",
-  "block.fivehundredsnickers.red_phosphor_lantern": "Red phosphor lantern"
+  "block.fivehundredsnickers.red_phosphor_lantern": "Red phosphor lantern",
+  "curios.identifier.mouth": "Mouth"
+
 }
