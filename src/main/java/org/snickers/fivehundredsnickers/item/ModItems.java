@@ -11,7 +11,6 @@ import org.snickers.fivehundredsnickers.FiveHundredSnickers;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, FiveHundredSnickers.MOD_ID);
 
-//    public static final RegistryObject<Item> REPAIR_TALISMAN = ITEMS.register("repair_talisman", () -> new RepairTalisman(new Item.Properties()));
     public static final RegistryObject<Item> CIGARETTE = ITEMS.register("cigarette", () -> new Item(new Item.Properties().food((new FoodProperties.Builder()
             .saturationMod(0.5F)
             .nutrition(1)
@@ -20,7 +19,7 @@ public class ModItems {
             .saturationMod(1.5F)
             .nutrition(5)
             .build())).stacksTo(1)));
-    public static final RegistryObject<RepairTalisman> STOGIE = ITEMS.register("stogie", () -> new Stogie(new Item.Properties()));
+    public static final RegistryObject<RepairTalisman> STOGIE = ITEMS.register("stogie", () -> new Stogie(new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

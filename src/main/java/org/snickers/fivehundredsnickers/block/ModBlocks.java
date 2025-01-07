@@ -22,9 +22,9 @@ public class ModBlocks {
             .sound(SoundType.WOOD)
             .strength(2F, 3F)
             .requiresCorrectToolForDrops()));
-//    public static final RegistryObject<Block> PACKED_STONE = registerBlock("packed_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+
     public static final RegistryObject<Block> RED_PHOSPHOR_LANTERN = registerBlock("red_phosphor_lantern", () -> new Block(BlockBehaviour.Properties.copy(Blocks.LANTERN)
-            .strength(3.5F)));
+            .strength(2F, 3F).requiresCorrectToolForDrops()));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

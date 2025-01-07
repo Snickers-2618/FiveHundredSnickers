@@ -1,3 +1,18 @@
 {
-	"parent": "fivehundredsnickers:blocks/stogie"
+	"parent": "minecraft:item/handheld",
+	"loader": "forge:separate_transforms",
+	"base": {
+		"parent": "fivehundredsnickers:item/stogie_3d"
+	},
+	"perspectives": {
+		"gui": {
+			"parent": "fivehundredsnickers:item/stogie_2d"
+		},
+		"ground": {
+			"parent": "fivehundredsnickers:item/stogie_2d"
+		},
+		"fixed": {
+			"parent": "fivehundredsnickers:item/stogie_2d"
+		}
+	}
 }
