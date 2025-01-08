@@ -2,11 +2,8 @@ package org.snickers.fivehundredsnickers.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -17,7 +14,6 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.snickers.fivehundredsnickers.FiveHundredSnickers;
 
 import javax.annotation.Nullable;
 
@@ -34,23 +30,13 @@ public class RedPhosphorLanternBlock extends LanternBlock {
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
         for (Direction direction : pContext.getNearestLookingDirections()) {
-            FiveHundredSnickers.LOGGER.info(direction.getAxis() + direction.toString());
             if (direction.getAxis() == Direction.Axis.Y) {
-                FiveHundredSnickers.LOGGER.info("NIGGER");
                 BlockState blockstate = this.defaultBlockState().setValue(HANGING, direction == Direction.UP);
                 if (blockstate.canSurvive(pContext.getLevel(), pContext.getClickedPos())) {
                     return blockstate.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
                 }
             }
         }
-
-        return null;
-    }
-
-    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
-    }
-
-    public static BlockState updateFromNeighbourShapes(BlockState pCurrentState, LevelAccessor pLevel, BlockPos pPos) {
 
         return null;
     }

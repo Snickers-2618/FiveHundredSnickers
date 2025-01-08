@@ -17,8 +17,12 @@ public class InternalTimers {
 //            repair.shouldUpdate = false;
             return true;
         }
-        repair.tick();
+//        repair.tick();
         return false;
+    }
+
+    public static void tick() {
+        repair.tick();
     }
 
     private static class Timer {
@@ -32,7 +36,7 @@ public class InternalTimers {
                     //Ensure we don't go negative if we are set to go off every tick
                     tickCount--;
                 }
-                shouldUpdate = false; //probably stuck here
+                shouldUpdate = false;
             }
         }
     }

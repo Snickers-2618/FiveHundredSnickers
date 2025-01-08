@@ -19,6 +19,7 @@ public class ItemHelper {
         return -1;
     }
 
+    @Deprecated(since = "thinkAgain") //you can compare better with getFirstStack and invSlot
     public static int getStackPos(Player player, ItemStack stack) {
         for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
             ItemStack s = player.getInventory().getItem(i);
@@ -29,7 +30,4 @@ public class ItemHelper {
         return -1;
     }
 
-    public static boolean isFirstItem(Player player, ItemStack stack) {
-        return getFirstStack(player, stack.getItem()) == getStackPos(player, stack);
-    }
 }
