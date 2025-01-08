@@ -3,9 +3,12 @@
   "item.fivehundredsnickers.bbc": "Бибиси",
   "item.fivehundredsnickers.repair_talisman": "Талисман починки",
   "item.fivehundredsnickers.stogie": "Сигара",
+  "item.fivehundredsnickers.red_phosphor": "Красный фосфор",
+  "item.fivehundredsnickers.blue_phosphor_bottle": "Бутылочка синего фосфора",
   "creativetab.fivehundredsnickers": "FiveHundredSnickers",
   "block.fivehundredsnickers.lavawood": "Лавовые доски",
   "block.fivehundredsnickers.packed_stone": "Плотный булыжник",
   "block.fivehundredsnickers.red_phosphor_lantern": "Красный фосфорный фонарь",
+  "block.fivehundredsnickers.blue_phosphor_lantern": "Синий фосфорный фонарь",
   "curios.identifier.mouth": "Рот"
 }
