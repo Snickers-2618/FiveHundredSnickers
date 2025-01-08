@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "NNN",
+    "GPG",
+    "NNN"
+  ],
+  "key": {
+    "P": {
+      "item": "fivehundredsnickers:blue_phosphor_bottle"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    },
+    "N": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "fivehundredsnickers:blue_phosphor_lantern",
+    "count": 1
+  }
+}

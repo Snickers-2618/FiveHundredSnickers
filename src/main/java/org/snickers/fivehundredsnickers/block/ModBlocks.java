@@ -4,7 +4,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LanternBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,6 +26,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> RED_PHOSPHOR_LANTERN = registerBlock("red_phosphor_lantern", () -> new RedPhosphorLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)
             .strength(2F, 3F).requiresCorrectToolForDrops()
             .lightLevel((p_152677_) -> 12).noOcclusion()));
+    public static final RegistryObject<Block> BLUE_PHOSPHOR_LANTERN = registerBlock("blue_phosphor_lantern", () -> new BluePhosphorLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)
+            .strength(2F, 3F).requiresCorrectToolForDrops()
+            .lightLevel((p_152677_) -> 15).noOcclusion()));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

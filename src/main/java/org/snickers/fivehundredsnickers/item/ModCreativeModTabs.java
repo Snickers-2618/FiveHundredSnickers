@@ -19,6 +19,7 @@ public class ModCreativeModTabs {
                 pOutput.accept(ModBlocks.LAVAWOOD.get());
 //                pOutput.accept(ModBlocks.PACKED_STONE.get());
                 pOutput.accept(ModBlocks.RED_PHOSPHOR_LANTERN.get());
+                pOutput.accept(ModBlocks.BLUE_PHOSPHOR_LANTERN.get());
                 pOutput.accept(ModItems.CIGARETTE.get());
                 pOutput.accept(ModItems.RED_PHOSPHOR.get());
                 pOutput.accept(ModItems.BLUE_PHOSPHOR_BOTTLE.get());

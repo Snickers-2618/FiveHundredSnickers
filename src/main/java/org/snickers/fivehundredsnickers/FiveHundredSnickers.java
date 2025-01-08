@@ -7,6 +7,7 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -30,10 +31,14 @@ public class FiveHundredSnickers {
     public FiveHundredSnickers(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
+
+        SnickersConfig.PE_INSTALLED = ModList.get().isLoaded("projecte");
+
         FiveHundredSnickers.LOGGER.info("My nigga starts!");
         ModCreativeModTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
+
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);

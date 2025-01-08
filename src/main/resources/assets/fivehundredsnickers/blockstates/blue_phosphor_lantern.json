@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "fivehundredsnickers:block/blue_phosphor_lantern"
+    },
+    "hanging=true": {
+      "model": "fivehundredsnickers:block/blue_phosphor_lantern_hanging"
+    }
+  }
+}

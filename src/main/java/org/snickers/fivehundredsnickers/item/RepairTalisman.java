@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 import org.snickers.fivehundredsnickers.FiveHundredSnickers;
+import org.snickers.fivehundredsnickers.SnickersConfig;
 import org.snickers.fivehundredsnickers.util.InternalTimers;
 
 import java.util.function.Predicate;
@@ -26,7 +27,7 @@ public class RepairTalisman extends Item {
 
     @Override
     public void inventoryTick(@NotNull ItemStack stack, Level level, @NotNull Entity entity, int invSlot, boolean isSelected) {
-        if (!level.isClientSide && entity instanceof Player player) {
+        if (!level.isClientSide && entity instanceof Player player && !SnickersConfig.PE_INSTALLED) {
             if (ItemHelper.getFirstStack(player, stack.getItem()) == invSlot) {
                 InternalTimers.activateRepair();
                 InternalTimers.tick();
