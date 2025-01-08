@@ -2,6 +2,7 @@ package org.snickers.fivehundredsnickers.item;
 
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,7 +22,7 @@ public class ModItems {
             .saturationMod(1.5F)
             .nutrition(5)
             .build())).stacksTo(1)));
-    public static final RegistryObject<RepairTalisman> STOGIE = ITEMS.register("stogie", () -> new Stogie(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<RepairTalisman> STOGIE = ITEMS.register("stogie", () -> new Stogie(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> RED_PHOSPHOR = ITEMS.register("red_phosphor", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BLUE_PHOSPHOR_BOTTLE = ITEMS.register("blue_phosphor_bottle", () -> new Item(new Item.Properties()));
 
