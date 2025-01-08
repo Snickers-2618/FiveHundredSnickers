@@ -22,7 +22,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LAVAWOOD = registerBlock("lavawood", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS)
             .sound(SoundType.WOOD)
             .strength(2F, 3F)
-            .requiresCorrectToolForDrops().lightLevel((p_152677_) -> 5).noOcclusion()));
+            .requiresCorrectToolForDrops().lightLevel((p_152677_) -> 4).noOcclusion()));
 
     public static final RegistryObject<Block> RED_PHOSPHOR_LANTERN = registerBlock("red_phosphor_lantern", () -> new RedPhosphorLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)
             .strength(2F, 3F).requiresCorrectToolForDrops()
