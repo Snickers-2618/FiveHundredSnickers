@@ -9,6 +9,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LanternBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -20,19 +23,18 @@ import javax.annotation.Nullable;
 public class BluePhosphorLanternBlock extends LanternBlock {
     protected static final VoxelShape AABB = Shapes.or(Shapes.or(Block.box(5.0D, 2.0D, 5.0D, 11.0D, 12.0D, 11.0D), Block.box(6.0D, 1.0D, 6.0D, 10.0D, 13.0D, 10.0D)), Block.box(5.0D, 0.0D, 5.0D, 11.0D, 1.0D, 11.0D));
     protected static final VoxelShape HANGING_AABB = Shapes.or(Block.box(5.0D, 2.0D, 5.0D, 11.0D, 12.0D, 11.0D), Block.box(6.0D, 1.0D, 6.0D, 10.0D, 13.0D, 10.0D));
-
+    public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
     public BluePhosphorLanternBlock(Block.Properties pProperties) {
         super(pProperties);
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
         for (Direction direction : pContext.getNearestLookingDirections()) {
             if (direction.getAxis() == Direction.Axis.Y) {
-                BlockState blockstate = this.defaultBlockState().setValue(HANGING, direction == Direction.UP);
+                BlockState blockstate = this.defaultBlockState().setValue(HANGING, direction == Direction.UP).setValue(FACING, pContext.getHorizontalDirection());
                 if (blockstate.canSurvive(pContext.getLevel(), pContext.getClickedPos())) {
                     return blockstate.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
                 }
@@ -40,6 +42,10 @@ public class BluePhosphorLanternBlock extends LanternBlock {
         }
 
         return null;
+    }
+
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+        pBuilder.add(HANGING, WATERLOGGED, FACING);
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
