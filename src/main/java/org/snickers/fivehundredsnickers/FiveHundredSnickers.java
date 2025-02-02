@@ -1,6 +1,7 @@
 package org.snickers.fivehundredsnickers;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.resources.SplashManager;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,8 +32,6 @@ public class FiveHundredSnickers {
 
     public FiveHundredSnickers(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
-
-
         SnickersConfig.PE_INSTALLED = ModList.get().isLoaded("projecte");
 
         FiveHundredSnickers.LOGGER.info("My nigga starts!");
