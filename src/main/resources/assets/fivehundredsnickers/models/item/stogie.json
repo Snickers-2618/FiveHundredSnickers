@@ -9,7 +9,7 @@
 			"parent": "fivehundredsnickers:item/stogie_2d"
 		},
 		"ground": {
-			"parent": "fivehundredsnickers:item/stogie_2d"
+			"parent": "fivehundredsnickers:item/stogie_3d"
 		},
 		"fixed": {
 			"parent": "fivehundredsnickers:item/stogie_2d"

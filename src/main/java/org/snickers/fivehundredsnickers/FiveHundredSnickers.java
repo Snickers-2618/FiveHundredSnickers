@@ -1,6 +1,7 @@
 package org.snickers.fivehundredsnickers;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -16,7 +17,7 @@ import org.slf4j.Logger;
 import org.snickers.fivehundredsnickers.block.ModBlocks;
 import org.snickers.fivehundredsnickers.item.ModCreativeModTabs;
 import org.snickers.fivehundredsnickers.item.ModItems;
-import org.snickers.fivehundredsnickers.util.curios.CurioRenderer;
+import org.snickers.fivehundredsnickers.util.curios.render.CurioRenderer;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 @Mod(FiveHundredSnickers.MOD_ID)

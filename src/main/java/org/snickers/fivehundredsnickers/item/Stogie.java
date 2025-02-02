@@ -1,6 +1,8 @@
 package org.snickers.fivehundredsnickers.item;
 
-public class Stogie extends RepairTalisman {
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
+
+public class Stogie extends RepairTalisman implements ICurioItem {
     public Stogie(Properties pProperties) {
         super(pProperties);
     }
