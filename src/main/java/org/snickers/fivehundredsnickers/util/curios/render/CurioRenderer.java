@@ -39,7 +39,7 @@ public class CurioRenderer  implements ICurioRenderer {
             Quaternionf rotation = yaw.mul(pitch).rotateZ((float) Math.toRadians(17)).rotateX((float) Math.toRadians(3));
             matrixStack.rotateAround(rotation, 0, 0, 0.0f);
             matrixStack.scale(1, 1, 1);
-            matrixStack.translate(0, 0.375, -0.09375);
+            matrixStack.translate(0, 0.3, -0.09375);
 
             renderer.render(stack, ItemDisplayContext.NONE, false, matrixStack, renderTypeBuffer, light, OverlayTexture.NO_OVERLAY, model1);
         }
@@ -48,7 +48,6 @@ public class CurioRenderer  implements ICurioRenderer {
     //freaky cock rotation
 //            Quaternionf rotation = new Quaternionf(-1, 0, 0, (headPitch/90)+1);
 //            matrixStack.rotateAround(rotation, 0, 0.5f, 0.1f);
-//
 //            matrixStack.scale(1, 1, 1);
 //            matrixStack.translate(0, 0.5, 0.1);
 
