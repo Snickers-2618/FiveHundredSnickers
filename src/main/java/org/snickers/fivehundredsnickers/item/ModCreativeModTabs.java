@@ -8,6 +8,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import org.snickers.fivehundredsnickers.FiveHundredSnickers;
+import org.snickers.fivehundredsnickers.SnickersConfig;
 import org.snickers.fivehundredsnickers.block.ModBlocks;
 
 public class ModCreativeModTabs {
@@ -16,15 +17,13 @@ public class ModCreativeModTabs {
             .icon(() -> new ItemStack(ModItems.BBC.get()))
             .title(Component.translatable("creativetab.fivehundredsnickers"))
             .displayItems((pParameters, pOutput) -> {
-                pOutput.accept(ModBlocks.LAVAWOOD.get());
-//                pOutput.accept(ModBlocks.PACKED_STONE.get());
+                if (!SnickersConfig.TCONSTRUCT_INSTALLED) pOutput.accept(ModBlocks.LAVAWOOD.get());
                 pOutput.accept(ModBlocks.RED_PHOSPHOR_LANTERN.get());
                 pOutput.accept(ModBlocks.BLUE_PHOSPHOR_LANTERN.get());
                 pOutput.accept(ModItems.CIGARETTE.get());
                 pOutput.accept(ModItems.RED_PHOSPHOR.get());
                 pOutput.accept(ModItems.BLUE_PHOSPHOR_BOTTLE.get());
                 pOutput.accept(ModItems.BBC.get());
-//                pOutput.accept(ModItems.REPAIR_TALISMAN.get());
                 pOutput.accept(ModItems.STOGIE.get());
             })
             .build());

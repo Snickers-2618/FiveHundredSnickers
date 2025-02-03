@@ -33,6 +33,7 @@ public class FiveHundredSnickers {
     public FiveHundredSnickers(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
         SnickersConfig.PE_INSTALLED = ModList.get().isLoaded("projecte");
+        SnickersConfig.TCONSTRUCT_INSTALLED = ModList.get().isLoaded("tconstruct");
 
         FiveHundredSnickers.LOGGER.info("My nigga starts!");
         ModCreativeModTabs.register(modEventBus);
